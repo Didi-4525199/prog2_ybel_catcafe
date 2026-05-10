@@ -1,0 +1,27 @@
+plugins {
+    id 'application'
+    id 'com.diffplug.spotless' version '8.0.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = 'catcafe.Main'
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:6.0.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+spotless {
+    java {
+        googleJavaFormat()
+    }
+}
